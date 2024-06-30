@@ -1,0 +1,32 @@
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-card>
+      <img (click)="presentToast()" [src]="tonyImg"/>
+      <ion-card-header>
+        <ion-card-subtitle>this <span *ngIf="clickCounter > 220">was</span><span *ngIf="clickCounter < 220">is</span></ion-card-subtitle>
+        <ion-card-title>Tony</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <p>Not much to look at, we know...</p>
+        <p>Click the button below to say, "<u>Hi Tony!</u>"</p><br/>
+        <ion-button (click)="helloTony()" shape="round">HI TONY!!!</ion-button>
+        <br/>
+        <ion-button *ngIf="clickCounter > 220" (click)="resetTony()" shape="round">Maybe lets reset Tony...</ion-button>
+      </ion-card-content>
+    </ion-card>
+        
+    <ion-chip color="secondary">
+      <ion-label color="dark">Your Hello's ({{overallCounter + clickCounter + helloClickCounter}})</ion-label>
+    </ion-chip>    
+
+    <ion-chip color="secondary">
+      <ion-label color="dark">Your Area Hello's (--)</ion-label>
+    </ion-chip>   
+
+    <ion-chip color="secondary">
+      <ion-label color="dark">World Wide Hello's (--)</ion-label>
+    </ion-chip>   
+
+  </div>
+</ion-content>
